@@ -7,13 +7,13 @@
             data-complete="https://sachin-surya-soft.github.io/payment/receiptPage.html"></script>
     <script type="text/javascript">
 
-            const params = new URLSearchParams(window.location.search)
-            var sessionId = params.get('sessionId')
-            var orderId = params.get('orderId')
-            var orderValue = params.get('amount')
-            var merchantName = params.get('merchantName')
-            var addressLine1 = params.get('addressLine1')
-            var addressLine2 = params.get('addressLine2')
+//             const params = new URLSearchParams(window.location.search)
+//             var sessionId = params.get('sessionId')
+//             var orderId = params.get('orderId')
+//             var orderValue = params.get('amount')
+//             var merchantName = params.get('merchantName')
+//             var addressLine1 = params.get('addressLine1')
+//             var addressLine2 = params.get('addressLine2')
 
             function errorCallback(error) {
                   android.showToast(JSON.stringify(error));
@@ -29,21 +29,21 @@
 
             Checkout.configure({
                 session: {
-                    id:  sessionId
+                    id:  `SESSION0002879594834I9165139M24`
                  },
-                merchant: merchantName,
+                merchant: 'MALAWIMRA',
                 order: {
-                    amount: orderValue,
+                    amount: 1000.00,
                     currency: 'MWK',
                     description: 'Load Money to BCN',
-                    id: orderId
+                    id: `123001`
                 },
                 interaction: {
                     merchant: {
-                        name: merchantName,
+                        name: 'MALAWIMRA',
                         address: {
-                            line1: addressLine1,
-                            line2: addressLine2
+                            line1: 'Street 12',
+                            line2: `Malawi`
                         }
                     },
                     displayControl: {
