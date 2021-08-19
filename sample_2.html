@@ -8,15 +8,15 @@
     <script type="text/javascript">
 
             function errorCallback(error) {
-                  android.showToast(JSON.stringify(error));
+                  android.showToast(JSON.stringify(error), 'Error');
             }
 
             function cancelCallback() {
-                  android.showToast('Cancelled');
+                  android.showToast('Cancelled', 'Cancelled');
             }
 
             function completeCallback(resultIndicator, sessionVersion) {
-                android.showToast('Completed');
+                android.showToast(resultIndicator, sessionVersion);
             }
 
             Checkout.configure({
