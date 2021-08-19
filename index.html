@@ -7,14 +7,6 @@
             data-complete="completeCallback"></script>
     <script type="text/javascript">
 
-//             const params = new URLSearchParams(window.location.search)
-//             var sessionId = params.get('sessionId')
-//             var orderId = params.get('orderId')
-//             var orderValue = params.get('amount')
-//             var merchantName = params.get('merchantName')
-//             var addressLine1 = params.get('addressLine1')
-//             var addressLine2 = params.get('addressLine2')
-
             function errorCallback(error) {
                   android.onPaymentFailed(JSON.stringify(error));
             }
