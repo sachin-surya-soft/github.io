@@ -1,0 +1,55 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://mtf.gateway.mastercard.com/checkout/version/61/checkout.js"
+            data-error="errorCallback"
+            data-cancel="cancelCallback"
+            data-complete="completeCallback"></script>
+    <script type="text/javascript">
+
+            function errorCallback(error) {
+                  android.showToast(JSON.stringify(error));
+            }
+
+            function cancelCallback() {
+                  android.showToast('Cancelled');
+            }
+
+            function completeCallback(resultIndicator, sessionVersion) {
+                android.showToast('Completed');
+            }
+
+            Checkout.configure({
+                session: {
+                    id:  'SESSION0002227889610K9031415K42'
+                 },
+                merchant: 'MALAWIMRA',
+                order: {
+                    amount: 1000,
+                    currency: 'MWK',
+                    description: 'Load Money to BCN',
+                    id: '123001'
+                },
+                interaction: {
+                    merchant: {
+                        name: 'MALAWIMRA',
+                        address: {
+                            line1: 'Street 12',
+                            line2: 'Malawi'
+                        }
+                    },
+                    displayControl: {
+                        billingAddress : 'HIDE',
+                        customerEmail  : 'HIDE',
+                        orderSummary   : 'SHOW',
+                        shipping       : 'HIDE'
+                    }
+                }
+            });
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
