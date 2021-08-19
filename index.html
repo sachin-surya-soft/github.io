@@ -8,7 +8,7 @@
     <script type="text/javascript">
 
             function errorCallback(error) {
-                  android.onPaymentFailed('Error');
+                  android.onPaymentFailed(JSON.stringify(error));
             }
 
             function cancelCallback() {
