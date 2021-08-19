@@ -16,15 +16,15 @@
 //             var addressLine2 = params.get('addressLine2')
 
             function errorCallback(error) {
-                  android.showToast(JSON.stringify(error));
+                  android.onPaymentFailed(JSON.stringify(error));
             }
 
             function cancelCallback() {
-                  android.showToast('CANCELLED');
+                  android.onPaymentCancelled();
             }
 
             function completeCallback(resultIndicator, sessionVersion) {
-                android.showToast('SUCCESS');
+                android.onPaymentSuccessful(resultIndicator, sessionVersion);
             }
 
             Checkout.configure({
